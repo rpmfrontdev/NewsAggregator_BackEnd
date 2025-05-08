@@ -1,10 +1,14 @@
-# Import FastAPI for creating the API server
+# Main entry point: Initialize FastAPI app and include routes
 from fastapi import FastAPI
+from api.routes import router
 
 # Initialize the FastAPI app
-app = FastAPI()
+app = FastAPI(title="News Aggregator API")
 
-# Define a simple root endpoint to verify the server is running
+# Include API routes
+app.include_router(router)
+
+# Root endpoint for health check
 @app.get("/")
 async def root():
     """Return a welcome message to confirm the API is operational."""
