@@ -2,3 +2,4 @@ venv/
 *.pyc
 __pycache__/
 notebooks/*.ipynb_checkpoints/
+rss_parser.py
